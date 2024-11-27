@@ -1,0 +1,314 @@
+body {  
+    margin: 0; /* Eliminar margen predeterminado del body */  
+    padding: 0; /* Eliminar padding predeterminado del body */  
+}  
+
+
+.container {  
+    margin-bottom: 20px; /* Este también puede ser ajustado */  
+}  
+
+.carrusel {  
+    max-width: 1200px; /* Ancho máximo del carrusel */  
+    margin: 0 auto; /* Centra el carrusel horizontalmente */  
+    padding: 20px; /* Espaciado interno */  
+    overflow: hidden; /* Asegúrate de que el contenido no se desborde */  
+}  
+
+.fotocarrusel {  
+        height: 400px; /* Altura fija para todas las pantallas */
+        width: 100%;  /* Ancho completo del contenedor */  
+        object-fit: cover; /* Ajusta la imagen para que llene el contenedor */  
+  
+    
+    /* Estilos para pantallas pequeñas (sm) */
+    @media (max-width: 576px) {  
+        .fotocarrusel {  
+            height: 200px; /* Altura para pantallas pequeñas */  
+        }  
+    }  
+    
+    /* Estilos para pantallas medianas (md) */  
+    @media (min-width: 577px) and (max-width: 768px) {  
+        .fotocarrusel {  
+            height: 300px; /* Altura para pantallas medianas */  
+        }  
+    }  
+    
+    /* Estilos para pantallas grandes (lg) */  
+    @media (min-width: 769px) {  
+        .fotocarrusel {  
+            height: 400px; /* Altura para pantallas grandes */  
+        }  
+    }  
+    
+}
+
+/* Estilos de las tarjetas */  
+.card {  
+    border: none; /* Sin marco */  
+    border-radius: 10px; /* Esquinas redondeadas */  
+    transition: transform 0.2s, box-shadow 0.2s; /* Efecto de hover */  
+  
+}  
+
+.img{
+    height: 200px;
+    width: auto;
+}
+.card:hover {  
+    transform: scale(1.05); /* Aumentar tamaño al pasar el cursor */  
+    box-shadow: 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */  
+}  
+
+/* Estilo específico para la sección superpuesta */  
+
+
+.overlay {  
+    position: absolute;  
+    top: 50%;  
+    left: 40%; /* Centrar horizontalmente */  
+    transform: translate(-50%, -50%); /* Centramos ambos ejes */  
+    color: white;  
+    text-align: center;  
+    z-index: 1;  
+}  
+
+.overlay h4 { /* Cambia h2 a h4 para que coincida con el HTML */  
+    font-size: 2rem;    
+    margin-bottom: 20px;  
+    color: #f8f9fa;  
+    font-family: 'Poppins', light;  
+}  
+
+.overlay .btn {  
+    padding: 8px 12px;  
+    font-size: 0.9rem;  
+    border-radius: 18px;  
+    margin-top: 10px; /* Espacio entre el texto y el botón */  
+}  
+
+.footer {  
+    background-color: #241913; /* Color oscuro */  
+    color: #FFF3E6; /* Color claro para el texto */  
+    text-align: center;  
+    padding: 20px 0;  
+}  
+
+.footer-content {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    max-width: 1200px;  
+    margin: 0 auto;  
+    flex-wrap: wrap;  
+}  
+
+
+.nav-links {  
+    display: flex;  
+    flex-wrap: wrap ;  /* Evita que los enlaces se envuelvan */
+    justify-content: center; /* Centra los enlaces horizontalmente */  
+}  
+
+.nav-links a {  
+    color: #FFF3E6;  
+    text-decoration: none;  
+    margin: 0 10px;  
+    padding: 5px;  
+}  
+
+.nav-links a:hover {  
+    color: #f8f9fa;  
+}  
+
+.contact-link {  
+    margin-left: 15px; /* Espacio entre los enlaces de contacto */  
+}  
+
+/* Estilo para el texto adicional */  
+.footer p {  
+    margin-top: 10px; /* Espacio entre el contenido del footer y el texto adicional */  
+    font-size: 0.8rem; /* Tamaño del texto más pequeño */  
+    color: #f8f9fa; /* Color del texto adicional */  
+}  
+
+/* SCROLL CSS */
+/* Estilo de secciones animadas  */
+
+/* Estado inicial */
+#volverArriba {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    transition: opacity 0.5s; /* Agrega una transición de opacidad */
+}
+#volverArriba:hover {
+    background-color: #666;
+}
+/* modo oscuro */
+
+.container-padre {  
+    font-family: 'Poppins', light;   
+    background-color: #FFF3E6; /* Fondo claro por defecto */  
+    margin: 0; /* Sin margen */  
+    transition: background-color 0.3s, color 0.3s; /* Animaciones suaves */  
+}  
+
+.navbar {  
+    background-color: #FFF3E6 ; /* Fondo en modo claro */  
+    padding: 10px;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+}  
+
+.navbar-brand {  
+    font-size: 24px;  
+    color: #735646; /* Color del texto en la navbar */  
+}  
+
+#modo-oscuro-claro {  
+    background-color: #F2EDE4; /* Color de fondo del botón en modo claro */  
+    color: #121212; /* Texto en modo claro */  
+    border: none;  
+    padding: 10px 20px;  
+    font-size: 16px;  
+    cursor: pointer;  
+    transition: background-color 0.3s, color 0.3s; /* Suave transición */  
+}  
+
+#modo-oscuro-claro:hover {  
+    background-color: #BBB9AF; /* Color al pasar el mouse en modo claro */  
+}  
+
+.container-padre.modo-oscuro {  
+    background-color: #735646; /* Fondo en modo oscuro */  
+    color: #E6E0D4; /* Texto en modo oscuro */  
+}  
+
+.container-padre.modo-oscuro .navbar {  
+    background-color: #735646; /* Fondo oscuro para la navbar */  
+}  
+
+.container-padre.modo-oscuro .navbar-brand {  
+    color: #F2EDE4; /* Color del texto en la navbar en modo oscuro */  
+}  
+
+.container-padre.modo-oscuro #modo-oscuro-claro {  
+    background-color: transparent; /* Fondo transparente en modo oscuro */  
+}  
+
+.container-padre.modo-oscuro #modo-oscuro-claro:hover {  
+    background-color: #735646; /* Color de fondo del botón al pasar el mouse en modo oscuro, igual que el contenedor */  
+}  
+
+#modo-oscuro-claro img {  
+    width: 24px; /* Ancho de la imagen */  
+    height: 24px; /* Alto de la imagen */  
+    transition: transform 0.3s; /* Efecto suave al cambiar */  
+}  
+
+#modo-oscuro-claro:hover img {  
+    transform: scale(1.5); /* Agrandar imagen al pasar el mouse */  
+}
+
+
+/* Carrito CSS */  
+#carrito ul {  
+    list-style-type: none;  
+    padding: 0;  
+}
+#carrito {  
+    display: none; /* Ocultar el carrito inicialmente */  
+    position: absolute; /* Para que se posicione sobre el contenido */  
+    background-color: #fff; /* Fondo blanco */  
+    border: 1px solid #ccc; /* Borde gris */  
+    padding: 15px;  
+    width: 250px; /* Ancho del carrito */  
+    margin-top: 10px; /* Espacio entre el ícono y el carrito */  
+    right: 20px; /* Alinear a la derecha */  
+    z-index: 1000; /* Por encima de otros elementos */  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */  
+    transition: all 0.3s ease; /* Transición suave */  
+}  
+
+#carrito-lista {  
+    list-style: none; /* Sin viñetas */  
+    padding: 0; /* Sin padding */  
+}  
+
+#carrito-lista li {  
+    display: flex; /* Flexbox para alinear ítems */  
+    align-items: center; /* Centrar verticalmente */  
+    margin-bottom: 10px; /* Espacio entre elementos */  
+}  
+
+#carrito-lista img {  
+    width: 50px; /* Ancho de las imágenes */  
+    height: 50px; /* Alto de las imágenes */  
+    margin-right: 10px; /* Espacio a la derecha de la imagen */  
+}  
+#limpiar-carrito {  
+    margin-top: 10px; /* Margen superior para espaciar del botón de cerrar */  
+}  
+/*Estilos segunda pagina*/
+.img-fluid {  
+    height: 200px;  
+    width: auto;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */  
+    transition: all 0.3s ease; /* Transición suave */  
+}  
+.img-fluid:hover img {  
+    transform: scale(1.5); /* Agrandar imagen al pasar el mouse */  
+}  
+
+#btn-volver {  
+    display: inline-block; /* Para que se comporte como un botón */  
+    margin-top: 20px; /* Espacio superior */  
+    padding: 10px 20px; /* Espaciado interno */  
+    font-size: 16px;  /* Tamaño del texto */  
+    text-decoration: none; /* Sin subrayado */  
+    color: white; /* Color del texto */  
+    background-color:#735646; /* Color de fondo (azul) */  
+    border-radius: 5px; /* Bordes redondeados */  
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */  
+}  
+
+#btn-volver:hover {  
+    background-color: #ae8067; /* Color al pasar el mouse (azul más oscuro) */  
+}  
+/* Estilos de gift cards */
+.card-img-top {  
+    width: 100%;  
+    height: 15vw;  
+    object-fit: cover;  
+}
+html, body {
+    height: 100%; /* Asegura que el cuerpo ocupe todo el alto del viewport */
+    margin: 0;
+}
+
+.container-padre {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Mínimo igual al alto de la ventana */
+}
+
+main {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer hacia el fondo */
+}
