@@ -1,116 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Demo</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Private Events</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins?query=Poppins">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
 <body>
     <div class="container-padre">
-        <!-- Header -->
-        <header class="bg-light">
-            <nav class="navbar navbar-expand-lg" id="navbar-inicial">
-                <a class="navbar-brand" href="#">
-                    <img class="logo" src="./imagenes/Logo.png" alt="Logo" width="300">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="#clases">CLASSES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./index5.html">PRIVATE EVENTS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./index6.html">GIFT CARDS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./index4.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./index7.html">SHOP</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#more">MORE</a></li>
-                    </ul>
-                    <div class="navbar-nav">
-                        <button id="modo-oscuro-claro" aria-label="Toggle Theme">
-                            <img id="modo-icono" src="./imagenes/dark mode.png" alt="Toggle Theme">
-                        </button>
-                        <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
-                        <a class="nav-link" href="#" id="toggle-carrito"><i class="fas fa-shopping-cart"></i></a>
-                        <a class="nav-link" href="./index3.html"><i class="fas fa-user"></i></a>
+        <header class="bg-light">  
+            <!-- Encabezado -->  
+            <nav class="navbar navbar-expand-lg" id="navbar-inicial">  
+                <a class="navbar-brand" href="#">  
+                    <img class="logo" src="./imagenes/Logo.png" alt="Logo" width="300" height="auto">  
+                </a>  
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">  
+                    <span class="navbar-toggler-icon"></span>  
+                </button>  
+                <div class="collapse navbar-collapse" id="navbarNav">  
+                    <ul class="navbar-nav mr-auto">  
+                        <li class="nav-item"><a class="nav-link" href="#clases">CLASSES</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="./index5.html">PRIVATE EVENTS</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="./index6.html">GIFT CARDS</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="./index4.html">FAQ</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="./index7.html">SHOP</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="#more">MORE</a></li>  
+                    </ul>  
+                    <div class="navbar-nav">  
+                        <button id="modo-oscuro-claro" aria-label="Cambiar entre modo claro y oscuro">  
+                            <img id="modo-icono" src="./imagenes/dark mode.png" alt="Modo Oscuro" />  
+                        </button>  
+                        <a class="nav-link" href="#"><i class="fas fa-search"></i></a>  
+                        <a class="nav-link" href="#" id="toggle-carrito"><i class="fas fa-shopping-cart"></i></a>  
+                        <a class="nav-link" href="./index3.html"><i class="fas fa-user"></i></a>  
+                        <div id="carrito" class="carrito">  
+                            <h2>Carrito de Compras</h2>  
+                            <ul id="carrito-lista"></ul>  
+                            <p id="total">Total: \$0</p>  
+                            <button id="cerrar-carrito" class="btn btn-danger">Cerrar</button>  
+                            <button id="limpiar-carrito" class="btn btn-warning">Limpiar Carrito</button> <!-- Botón de limpiar -->  
+                            <button id="comprar-carrito" class="btn btn-success">Comprar</button>
+                        </div> 
+                    </div>  
+                </div>   
+            </nav>   
+        </header>  
+
+        <!-- Contenido Principal para Private Events -->
+        <div class="container">
+            <h1>Private Events</h1>
+            <p>Celebrate life’s special moments with us! Our private pottery events are designed to bring people together in a creative and relaxing environment. Whether it’s a birthday, a bridal shower, a team-building event, or just a gathering with friends, we ensure a memorable experience.</p>
+        </div>
+
+        <!-- Sección de Opciones con Tarjetas -->
+        <div class="container">
+            <h2>Event Options</h2>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="img" src="./imagenes/private1.jpg" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Team-Building Workshop</h5>
+                            <p class="card-text">150.00 </p>
+                        </div>
+                        <a href="#" class="btn btn-dark agregar-al-carrito">Add to Cart</a>
                     </div>
                 </div>
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <main>
-            <!-- Accordion FAQ -->
-            <section class="container my-5">
-                <h1 class="text-center">Frequently Asked Questions</h1>
-                <div class="accordion" id="faqAccordion">
-                    <!-- Question 1 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faqHeading1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-                                What is included in the Birthday Package?
-                            </button>
-                        </h2>
-                        <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                The Birthday Package includes pottery materials, decorations, catering, and a guided activity for all participants.
-                            </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="img" src="./imagenes/private2.jpg" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Birthday Party Pottery Session</h5>
+                            <p class="card-text">200.00 </p>
                         </div>
-                    </div>
-                    <!-- Question 2 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faqHeading2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                                Can I book a private event outside of Florida?
-                            </button>
-                        </h2>
-                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Currently, we only offer private events within Florida. Stay tuned for updates as we expand to other locations.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Question 3 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faqHeading3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                                How can I contact customer support?
-                            </button>
-                        </h2>
-                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                You can reach us via WhatsApp at <a href="https://wa.me/2616746256">2616746256</a> or on Instagram at <a href="https://www.instagram.com/terraceramics/">terraceramics</a>.
-                            </div>
-                        </div>
+                        <a href="#" class="btn btn-dark agregar-al-carrito">Add to Cart</a>
                     </div>
                 </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer bg-light py-4">
-            <div class="container">
-                <nav class="nav justify-content-center">
-                    <a href="#" class="nav-link">CLASSES</a>
-                    <a href="#" class="nav-link">PRIVATE EVENTS</a>
-                    <a href="#" class="nav-link">GIFT CARDS</a>
-                    <a href="#" class="nav-link">FAQ</a>
-                    <a href="#" class="nav-link">SHOP</a>
-                    <a href="#" class="nav-link">MORE</a>
-                    <a href="https://maps.app.goo.gl/x5RfNmLGuk3n5J3i9" class="nav-link">LOCATION: FLORIDA</a>
-                    <a href="https://wa.me/2616746256" class="nav-link"><i class="fab fa-whatsapp"></i> 2616746256</a>
-                    <a href="https://www.instagram.com/terraceramics/" class="nav-link"><i class="fab fa-instagram"></i> terraceramics</a>
-                </nav>
-                <p class="text-center mt-3">&copy; 2023 Clay Bliss. All rights reserved.</p>
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="img" src="./imagenes/private3.jpg" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Bridal Shower Event</h5>
+                            <p class="card-text">180.00 </p>
+                        </div>
+                        <a href="#" class="btn btn-dark agregar-al-carrito">Add to Cart</a>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!-- Botón Back to Home -->
+        <div class="container text-center">
+            <a href="index.html" id="btn-volver">Back to Home</a>
+        </div>
+
+        <!-- Footer Conservado -->
+        <footer class="footer">
+            <div class="footer-content">
+                <nav class="nav-links">
+                    <a href="#">CLASSES</a>
+                    <a href="#">PRIVATE EVENTS</a>
+                    <a href="#">GIFT CARDS</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">SHOP</a>
+                    <a href="#">MORE</a>
+                    <a href="https://maps.app.goo.gl/x5RfNmLGuk3n5J3i9">LOCATION: FLORIDA</a>
+                    <span>FORT LAUDERDALE</span>
+                    <a href="https://wa.me/2616746256" class="contact-link">
+                        <i class="fab fa-whatsapp"></i> 2616746256
+                    </a>
+                    <a href="https://www.instagram.com/terraceramics/" class="contact-link">
+                        <i class="fab fa-instagram"></i> terraceramics
+                    </a>
+                </nav>
+            </div>
+            <p>&copy; 2023 Clay Bliss. Todos los derechos reservados.</p>
         </footer>
     </div>
 
-    <!-- Scripts -->
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

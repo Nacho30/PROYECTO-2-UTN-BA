@@ -54,71 +54,84 @@ document.addEventListener('DOMContentLoaded', () => {
             : './imagenes/dark mode.png';
     }
 });
-document.addEventListener('DOMContentLoaded', () => {  
-    const carrito = []; // Arreglo para almacenar los items del carrito  
-    const carritoLista = document.getElementById('carrito-lista');  
-    const totalElement = document.getElementById('total');  
-    const carritoDiv = document.getElementById('carrito');  
-    const toggleCarritoButton = document.getElementById('toggle-carrito');  
-    const limpiarCarritoButton = document.getElementById('limpiar-carrito');  
+document.addEventListener('DOMContentLoaded', () => {
+    const carrito = []; // Arreglo para almacenar los items del carrito
+    const carritoLista = document.getElementById('carrito-lista');
+    const totalElement = document.getElementById('total');
+    const carritoDiv = document.getElementById('carrito');
+    const toggleCarritoButton = document.getElementById('toggle-carrito');
+    const limpiarCarritoButton = document.getElementById('limpiar-carrito');
+    const comprarCarritoButton = document.getElementById('comprar-carrito'); // Botón Comprar
 
-    // Función para actualizar el carrito en la UI  
-    function actualizarCarrito() {  
-        carritoLista.innerHTML = ''; // Limpiar la lista actual  
-        let total = 0;  
+    // Función para actualizar el carrito en la UI
+    function actualizarCarrito() {
+        carritoLista.innerHTML = ''; // Limpiar la lista actual
+        let total = 0;
 
-        carrito.forEach(item => {  
-            const li = document.createElement('li');  
-            li.innerHTML = `<img src="${item.imagen}" alt="${item.nombre}"> ${item.nombre} - $${item.precio.toFixed(2)}`;  
-            carritoLista.appendChild(li);  
-            total += item.precio; // Sumar el precio al total  
-        });  
+        carrito.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<img src="${item.imagen}" alt="${item.nombre}"> ${item.nombre} - $${item.precio.toFixed(2)}`;
+            carritoLista.appendChild(li);
+            total += item.precio; // Sumar el precio al total
+        });
 
-        // Comprobar si el total es un número antes de actualizar el texto  
-        if (!isNaN(total)) {  
-            totalElement.textContent = `Total: $${total.toFixed(2)}`;  
-        } else {  
-            totalElement.textContent = `Total: \$0.00`; // Muestra \$0.00 si el total no es un número  
-        }  
-    }  
+        // Comprobar si el total es un número antes de actualizar el texto
+        if (!isNaN(total)) {
+            totalElement.textContent = `Total: $${total.toFixed(2)}`;
+        } else {
+            totalElement.textContent = `Total: $0.00`; // Muestra $0.00 si el total no es un número
+        }
+    }
 
-    // Escuchar los clics en los botones de agregar al carrito  
-    document.querySelectorAll('.agregar-al-carrito').forEach(boton => {  
-        boton.addEventListener('click', (event) => {  
-            event.preventDefault(); // Evitar el comportamiento por defecto del enlace  
+    // Escuchar los clics en los botones de agregar al carrito
+    document.querySelectorAll('.agregar-al-carrito').forEach(boton => {
+        boton.addEventListener('click', (event) => {
+            event.preventDefault(); // Evitar el comportamiento por defecto del enlace
 
-            const cardBody = event.target.closest('.card').querySelector('.card-body');  
-            const nombre = cardBody.querySelector('.card-title').textContent;  
-            const precioTexto = cardBody.querySelector('.card-text').textContent;  
-            const precio = parseFloat(precioTexto.replace('$', '').trim()); // Asegúrate de que el precio se convierta correctamente  
-            const imagenSrc = event.target.closest('.card').querySelector('img').src; // Obtener la imagen del producto  
+            const cardBody = event.target.closest('.card').querySelector('.card-body');
+            const nombre = cardBody.querySelector('.card-title').textContent;
+            const precioTexto = cardBody.querySelector('.card-text').textContent;
+            const precio = parseFloat(precioTexto.replace('$', '').trim()); // Asegúrate de que el precio se convierta correctamente
+            const imagenSrc = event.target.closest('.card').querySelector('img').src; // Obtener la imagen del producto
 
-            // Comprobar que el precio se haya convertido correctamente  
-            if (!isNaN(precio)) {  
-                // Agregar el producto al carrito  
-                carrito.push({ nombre, precio, imagen: imagenSrc });  
-            } else {  
-                console.error('Error al convertir el precio:', precioTexto); // Mensaje de depuracion  
-            }  
+            // Comprobar que el precio se haya convertido correctamente
+            if (!isNaN(precio)) {
+                // Agregar el producto al carrito
+                carrito.push({ nombre, precio, imagen: imagenSrc });
+            } else {
+                console.error('Error al convertir el precio:', precioTexto); // Mensaje de depuración
+            }
 
-            actualizarCarrito();  
-        });  
-    });  
+            actualizarCarrito();
+        });
+    });
 
-    // Mostrar/ocultar el carrito al hacer clic en el ícono  
-    toggleCarritoButton.addEventListener('click', (event) => {  
-        event.preventDefault(); // Evitar el comportamiento por defecto del enlace  
-        carritoDiv.style.display = carritoDiv.style.display === 'block' ? 'none' : 'block';  
-    });  
+    // Mostrar/ocultar el carrito al hacer clic en el ícono
+    toggleCarritoButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+        carritoDiv.style.display = carritoDiv.style.display === 'block' ? 'none' : 'block';
+    });
 
-    // Cerrar el carrito con el botón "Cerrar"  
-    document.getElementById('cerrar-carrito').addEventListener('click', () => {  
-        carritoDiv.style.display = 'none'; // Oculta el carrito  
-    });  
+    // Cerrar el carrito con el botón "Cerrar"
+    document.getElementById('cerrar-carrito').addEventListener('click', () => {
+        carritoDiv.style.display = 'none'; // Oculta el carrito
+    });
 
-    // Limpiar el carrito con el botón "Limpiar Carrito"  
-    limpiarCarritoButton.addEventListener('click', () => {  
-        carrito.length = 0; // Vaciar el array del carrito  
-        actualizarCarrito(); // Actualizar la UI para reflejar que el carrito está vacío  
-    });  
-});    
+    // Limpiar el carrito con el botón "Limpiar Carrito"
+    limpiarCarritoButton.addEventListener('click', () => {
+        carrito.length = 0; // Vaciar el array del carrito
+        actualizarCarrito(); // Actualizar la UI para reflejar que el carrito está vacío
+    });
+
+    // Comprar carrito: Redirigir a la página de registro
+    comprarCarritoButton.addEventListener('click', () => {
+        if (carrito.length === 0) {
+            alert("El carrito está vacío. Agrega productos antes de comprar.");
+            return;
+        }
+
+        // Aquí puedes enviar los datos del carrito a tu backend o procesarlos
+        // Redirigir a la página de registro de compra
+        window.location.href = "./index8.html";
+    });
+});
